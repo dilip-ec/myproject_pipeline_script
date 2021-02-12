@@ -1,4 +1,4 @@
-node
+node('nodess')
 {
     properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), parameters([choice(choices: ['master', 'development'], description: 'branchName uses for selecting branch', name: 'branchName')]), pipelineTriggers([pollSCM('* * * * *')])])
     def mavenHome = tool name: "maven3.6.3"
